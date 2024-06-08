@@ -1,0 +1,62 @@
+#login h1 a, .login h1 a {
+    background-image: url("../images/logo.svg");
+    height: 65px;
+    width: 320px;
+    background-size: 320px 65px;
+    background-repeat: no-repeat;
+    padding-bottom: 30px;
+}
+
+/* Login background */
+body{
+    background: url("../images/login-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#login #nav .wp-login-lost-password, #login #backtoblog a, #nav .wp-login-log-in {
+    @apply text-white !important;
+}
+
+#login #nav, #login #backtoblog {
+    @apply pl-0;
+}
+
+.language-switcher{
+    @apply hidden;
+}
+
+.wp-core-ui .button-primary {
+    background: #C4952E;
+    border-color: #C4952E;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+    padding: 5px 15px !important;
+}
+
+.wp-core-ui .button-primary:hover {
+    background: #9d7725;
+    border-color: #9d7725;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.login form {
+    padding: 34px 24px;
+    font-weight: 400;
+    overflow: hidden;
+    background: #EFE6D9;
+    border: none;
+    color: #13565E;
+    border-radius: 6px;
+}
+
+.login .message, .login .notice, .login .success {
+    border-left: 4px solid #C4952E;
+    padding: 12px;
+    margin-left: 0;
+    margin-bottom: 20px;
+    background-color: #EFE6D9;
+}

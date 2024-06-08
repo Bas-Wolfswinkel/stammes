@@ -11,6 +11,8 @@ export default async (bud: Bud) => {
 
     .entry(`app`, [`@scripts/app`, `@styles/app`])
     .entry(`editor`, [`@scripts/editor`, `@styles/editor`])
+    .entry(`login`, [`@styles/login`])
+    .entry(`admin`, [`@scripts/admin`, `@styles/admin`])
     .copyDir(`images`)
 
     .setPublicPath(`/dist/`)
@@ -18,7 +20,7 @@ export default async (bud: Bud) => {
 
     .wpjson.setSettings({
       color: {
-        custom: false,
+        custom: true,
         customDuotone: false,
         customGradient: false,
         defaultDuotone: false,

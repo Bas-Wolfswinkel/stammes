@@ -109,7 +109,8 @@
                 "App\\Providers\\AssetsServiceProvider",
                 "App\\Providers\\BlocksServiceProvider",
                 "App\\Providers\\ThemeServiceProvider",
-                "App\\Providers\\PostTypesServiceProvider"
+                "App\\Providers\\PostTypesServiceProvider",
+                "App\\Providers\\BackendStylingServiceProvider"
             ]
         },
         "installer-paths": {
