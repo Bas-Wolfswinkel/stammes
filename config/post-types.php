@@ -13,14 +13,14 @@ return [
     */
 
     'post_types' => [
-        'seed' => [
-            'menu_icon' => 'dashicons-star-filled',
-            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+        'project' => [
+            'menu_icon' => 'dashicons-admin-customizer',
+            'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
             'show_in_rest' => true,
             'names' => [
-                'singular' => 'Seed',
-                'plural' => 'Seeds',
-                'slug' => 'seeds',
+                'singular' => 'Project',
+                'plural' => 'Projecten',
+                'slug' => 'projecten',
             ]
         ],
     ],

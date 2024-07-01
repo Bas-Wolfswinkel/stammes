@@ -1,0 +1,27 @@
+/* Pagination */
+
+/* Progressbar */
+.swiper-pagination-progressbar{
+    @apply bg-dark-green/30;
+
+    .swiper-pagination-progressbar-fill{
+        @apply bg-dark-green;
+    }
+}
+
+/* Buttons */
+.swiper-button-next::after{
+    content: url("../images/icons/arrow-right-swiper.svg");
+}
+
+.swiper-button-prev::after{
+    content: url("../images/icons/arrow-left-swiper.svg");
+    @apply rotate-180;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+    &.swiper-button-disabled{
+        @apply opacity-0;
+    }
+}

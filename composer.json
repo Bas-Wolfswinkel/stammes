@@ -62,6 +62,7 @@
         "log1x/acorn-disable-media-pages": "^1.0",
         "masterminds/html5": "^2.8",
         "oscarotero/env": "^2.1",
+        "outlawz-team/radicle": "^1.0",
         "roots/acorn": "^4.0",
         "roots/acorn-prettify": "^1.0",
         "roots/bedrock-autoloader": "^1.0",

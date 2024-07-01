@@ -7,7 +7,7 @@ return [
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     'menus' => [
-        'primary_navigation' => __('Primary Navigation', 'radicle'),
+        'header_navigation' => __('Header Navigation', 'radicle'),
         'footer_navigation' => __('Footer Navigation', 'radicle'),
     ],
 
