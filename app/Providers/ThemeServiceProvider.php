@@ -9,10 +9,8 @@ class ThemeServiceProvider extends SageServiceProvider
 {
     /**
      * Register theme services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         parent::register();
 
@@ -23,11 +21,11 @@ class ThemeServiceProvider extends SageServiceProvider
          */
         add_action('after_setup_theme', function (): void {
             Collection::make(config('theme.support'))
-                ->map(fn ($params, $feature) => is_array($params) ? [$feature, $params] : [$params])
+                ->map(fn ($params, $feature): array => is_array($params) ? [$feature, $params] : [$params])
                 ->each(fn ($params) => add_theme_support(...$params));
 
             Collection::make(config('theme.remove'))
-                ->map(fn ($entry) => is_string($entry) ? [$entry] : $entry)
+                ->map(fn ($entry): mixed => is_string($entry) ? [$entry] : $entry)
                 ->each(fn ($params) => remove_theme_support(...$params));
 
             register_nav_menus(config('theme.menus'));
@@ -51,10 +49,8 @@ class ThemeServiceProvider extends SageServiceProvider
 
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         parent::boot();
     }
