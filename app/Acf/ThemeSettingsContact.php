@@ -23,10 +23,25 @@ class ThemeSettingsContact extends Acf
     {
         return [
             [
+                'type' => 'text',
+                'name' => 'adress',
+                'label' => 'Adres',
+            ],
+            [
+                'type' => 'text',
+                'name' => 'postal_city',
+                'label' => 'Postcode en plaats',
+            ],
+            [
+                'type' => 'text',
+                'name' => 'email',
+                'label' => 'Email',
+            ],
+            [
                 'type' => 'link',
                 'name' => 'phone',
                 'label' => 'Telefoon',
-            ]
+            ],
         ];
     }
 
