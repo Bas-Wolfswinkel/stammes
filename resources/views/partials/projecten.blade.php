@@ -2,7 +2,7 @@
     <x-container>
         @if ($title = get_sub_field('title'))
             <h2
-                class="text-green text-title-medium mx-auto mb-[50px] max-w-[436px] text-center text-[40px] md:mb-[100px]">
+                class="text-green text-title-medium mx-auto mb-[50px] max-w-[436px] text-center text-[40px] md:mb-[100px] lg:leading-[50px]">
                 {!! App\Helper::title($title) !!}
             </h2>
         @endif
