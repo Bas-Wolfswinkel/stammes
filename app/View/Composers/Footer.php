@@ -19,7 +19,7 @@ class Footer extends Composer
             'services' => get_posts(['post_type' => 'service', 'posts_per_page' => -1]),
             'contact_arr' => [
                 'phone' => get_field('phone', 'option'),
-                'adress' => get_field('adress', 'option'),
+                'address' => get_field('address', 'option'),
                 'postal_city' => get_field('postal_city', 'option'),
                 'email' => get_field('email', 'option'),
             ],

@@ -33,9 +33,9 @@
                     <div class="order-3 space-y-[6px] lg:order-4">
                         <p class="font-lato text-footer-title text-gold-2 uppercase">Adresgegevens</p>
                         <ul class="list-none space-y-[6px]">
-                            @if ($contact_arr['adress'])
+                            @if ($contact_arr['address'])
                                 <li>
-                                    <p class="font-lato text-button text-white">{{ $contact_arr['adress'] }}</p>
+                                    <p class="font-lato text-button text-white">{{ $contact_arr['address'] }}</p>
                                 </li>
                             @endif
                             @if ($contact_arr['postal_city'])
