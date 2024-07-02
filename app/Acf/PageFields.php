@@ -217,7 +217,22 @@ class PageFields extends Acf
                                 'wrapper' => [
                                     'width' => '50%',
                                 ],
-                                'sub_fields' => [self::colorPicker('contact'), self::colorPicker('contact2')],
+                                'sub_fields' => [
+                                    [
+                                        'type' => 'image',
+                                        'name' => 'image',
+                                        'label' => 'Afbeelding',
+                                    ],
+                                    self::colorPicker('contact_foto', 'Afbeelding blok kleur'),
+                                    [
+                                        'type' => 'true_false',
+                                        'name' => 'contact_info',
+                                        'label' => 'Contactgegevens tonen?',
+                                        'ui' => 1,
+                                        'default_value' => 1,
+                                        'instructions' => 'Deze gevens worden opgehaald vanuit "Theme Settings > Contact info',
+                                    ],
+                                ],
                             ],
                             [
                                 'type' => 'group',
@@ -228,9 +243,14 @@ class PageFields extends Acf
                                 ],
                                 'sub_fields' => [
                                     [
+                                        'type' => 'wysiwyg',
+                                        'name' => 'content',
+                                        'label' => 'Content',
+                                    ],
+                                    [
                                         'type' => 'text',
-                                        'name' => 'contactform_shortcode_r',
-                                        'label' => 'Contactformulier shortcode',
+                                        'name' => 'shortcode',
+                                        'label' => 'Formulier shortcode',
                                     ],
                                 ],
                             ],
@@ -338,28 +358,28 @@ class PageFields extends Acf
     /**
      * ACF color picker field with presets
      */
-    public function colorPicker(string $name): array
+    public function colorPicker(string $name, string $label = null): array
     {
         return [
-            'label' => 'Color Selection',
+            'label' => $label ?? 'Kleur selectie',
             'name' => $name,
             'type' => 'group',
             'layout' => 'block',
             'sub_fields' => [
                 [
-                    'label' => 'Color Choice',
+                    'label' => 'Kleur keuze',
                     'name' => $name . '_choice',
                     'type' => 'select',
                     'choices' => [
                         '#4B847D' => '#4B847D - Donker Groen',
                         '#BE8A16' => '#BE8A16 - Goud',
                         '#E0B860' => '#E0B860 - Licht Goud',
-                        'custom' => 'Custom Color',
+                        'custom' => 'Aangepaste kleur',
                     ],
                     'default_value' => 'preset1',
                 ],
                 [
-                    'label' => 'Custom Color',
+                    'label' => 'Aangepaste kleur',
                     'name' => $name . '_custom_choice',
                     'type' => 'color_picker',
                     'conditional_logic' => [
