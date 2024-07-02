@@ -111,7 +111,7 @@ class PageFields extends Acf
                                 'name' => 'image',
                                 'label' => 'Image',
                             ],
-                        ]
+                        ],
                     ],
                     [
                         'type' => 'group',
@@ -149,7 +149,7 @@ class PageFields extends Acf
                                     ],
                                 ],
                             ],
-                        ]
+                        ],
                     ],
                     [
                         'type' => 'group',
@@ -204,6 +204,38 @@ class PageFields extends Acf
                             ],
                         ],
                     ],
+                    [
+                        'type' => 'group',
+                        'name' => 'contact_form',
+                        'label' => 'Contact Formulier groot',
+                        'sub_fields' => [
+                            self::titleField(),
+                            [
+                                'type' => 'group',
+                                'name' => 'contact_form_left',
+                                'label' => 'Links',
+                                'wrapper' => [
+                                    'width' => '50%',
+                                ],
+                                'sub_fields' => [self::colorPicker('contact'), self::colorPicker('contact2')],
+                            ],
+                            [
+                                'type' => 'group',
+                                'name' => 'contact_form_right',
+                                'label' => 'Rechts',
+                                'wrapper' => [
+                                    'width' => '50%',
+                                ],
+                                'sub_fields' => [
+                                    [
+                                        'type' => 'text',
+                                        'name' => 'contactform_shortcode_r',
+                                        'label' => 'Contactformulier shortcode',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ];
@@ -231,16 +263,12 @@ class PageFields extends Acf
     public function options()
     {
         return [
-
-            'hide_on_screen' => [
-                'the_content',
-            ],
+            'hide_on_screen' => ['the_content'],
             'position' => 'normal',
             'label_placement' => 'top',
             'instruction_placement' => 'label',
         ];
     }
-
 
     /**
      * Generate space layout
@@ -293,6 +321,7 @@ class PageFields extends Acf
                 ],
             ];
         }
+
         return $spaceLayout;
     }
 
@@ -303,6 +332,47 @@ class PageFields extends Acf
             'label' => 'Title',
             'type' => 'text',
             'default_value' => 'The title of the section, use these colors to style the title: <gold>, you can also use <bold>',
+        ];
+    }
+
+    /**
+     * ACF color picker field with presets
+     */
+    public function colorPicker(string $name): array
+    {
+        return [
+            'label' => 'Color Selection',
+            'name' => $name,
+            'type' => 'group',
+            'layout' => 'block',
+            'sub_fields' => [
+                [
+                    'label' => 'Color Choice',
+                    'name' => $name . '_choice',
+                    'type' => 'select',
+                    'choices' => [
+                        '#4B847D' => '#4B847D - Donker Groen',
+                        '#BE8A16' => '#BE8A16 - Goud',
+                        '#E0B860' => '#E0B860 - Licht Goud',
+                        'custom' => 'Custom Color',
+                    ],
+                    'default_value' => 'preset1',
+                ],
+                [
+                    'label' => 'Custom Color',
+                    'name' => $name . '_custom_choice',
+                    'type' => 'color_picker',
+                    'conditional_logic' => [
+                        [
+                            [
+                                'field' => $name . '_choice',
+                                'operator' => '==',
+                                'value' => 'custom',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ];
     }
 }
