@@ -1,0 +1,38 @@
+.contact-page-form {
+    form {
+        @apply flex flex-col;
+    }
+
+    .jet-form-builder-row {
+        @apply m-0 mt-4 grid-cols-4 p-0 md:mt-10 md:grid md:items-center md:gap-2 !important;
+
+        .jet-form-builder__label {
+            @apply col-span-1 mb-2 w-fit text-contact-form-label text-black md:mb-0 !important;
+        }
+
+        .jet-form-builder__field-wrap,
+        .jet-form-builder__fields-group {
+            @apply col-span-3;
+        }
+
+        .checkradio-wrap {
+            @apply flex flex-row gap-10 !important;
+        }
+    }
+
+    .jet-form-builder-row.field-type-checkbox-field {
+        @apply mt-4 md:mt-6 !important;
+    }
+
+    .field-type-checkbox-field .jet-form-builder__fields-group.checkradio-wrap {
+        @apply col-span-4 !important;
+    }
+
+    input {
+        @apply min-h-[64px] rounded-[10px] border-none bg-[#ADCECA33] px-4 py-2 text-body text-black placeholder:text-black/50;
+    }
+
+    button {
+        @apply button uppercase;
+    }
+}
