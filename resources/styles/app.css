@@ -115,6 +115,6 @@
     }
 }
 
-ul{
-    @apply list-disc list-inside ;
+main ul{
+    @apply list-disc list-inside;
 }
