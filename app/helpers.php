@@ -8,7 +8,7 @@ namespace App;
 
 class Helper
 {
-    static function title(string $title = null)
+    public static function title(string $title = null): array|string
     {
         if (is_null($title)) {
             $title = get_sub_field('title') ?? 'Default Title';
@@ -18,8 +18,7 @@ class Helper
         $title = str_replace('<green>', '<span class="text-green font-bold">', $title);
         $title = str_replace('</green>', '</span>', $title);
         $title = str_replace('<bold>', '<span class="font-bold">', $title);
-        $title = str_replace('</bold>', '</span>', $title);
 
-        return $title;
+        return str_replace('</bold>', '</span>', $title);
     }
 }

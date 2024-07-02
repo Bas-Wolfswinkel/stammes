@@ -1,0 +1,10 @@
+parameters:
+    level: 5
+    paths:
+        - app
+    ignoreErrors:
+        - '#Function [a-zA-Z0-9\\_]+ not found#'
+        - '#Call to undefined function [a-zA-Z0-9\\_]+\(\)#'
+    # Remove the WordPress stubs bootstrap
+    # bootstrapFiles:
+    #     - vendor/php-stubs/wordpress-stubs/wordpress-stubs.php

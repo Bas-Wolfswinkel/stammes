@@ -16,10 +16,12 @@
     "translate:update": "for file in ./resources/lang/*.po; do wp i18n update-po ./resources/lang/radicle.pot $file; done",
     "translate:compile": "npm run translate:mo && npm run translate:js",
     "translate:js": "wp i18n make-json ./resources/lang --pretty-print",
-    "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang"
+    "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@playwright/test": "1.41.1",
+    "@prettier/plugin-php": "^0.22.2",
     "@roots/bud": "6.20.0",
     "@roots/bud-eslint": "6.20.0",
     "@roots/bud-preset-wordpress": "6.20.0",
@@ -29,10 +31,12 @@
     "@roots/bud-tailwindcss": "6.20.0",
     "@roots/eslint-config": "6.20.0",
     "@roots/sage": "6.20.0",
+    "@shufo/prettier-plugin-blade": "^1.14.1",
     "@tailwindcss/forms": "^0.5.3",
     "@types/alpinejs": "^3.7.1",
     "@types/wordpress__block-editor": "11.5.10",
     "@types/wordpress__blocks": "12.5.13",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "typescript": "5.3.3"
   },
   "dependencies": {

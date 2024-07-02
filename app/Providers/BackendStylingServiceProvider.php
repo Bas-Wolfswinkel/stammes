@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use function Roots\bundle;
 
+use function Roots\bundle;
 
 class BackendStylingServiceProvider extends ServiceProvider
 {
@@ -15,7 +15,7 @@ class BackendStylingServiceProvider extends ServiceProvider
     {
         /**
          * Enqueue backend styling
-         * 
+         *
          * @since 1.0.0
          * @return void
          */
@@ -26,7 +26,7 @@ class BackendStylingServiceProvider extends ServiceProvider
 
         /**
          * Enqueue login styling
-         * 
+         *
          * @since 1.0.0
          * @return void
          */
@@ -41,7 +41,7 @@ class BackendStylingServiceProvider extends ServiceProvider
     public function boot(): void
     {
 
-        add_action('after_setup_theme', function () {
+        add_action('after_setup_theme', function (): void {
             add_theme_support('wp-block-styles');
         });
     }

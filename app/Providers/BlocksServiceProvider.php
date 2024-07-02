@@ -9,15 +9,13 @@ class BlocksServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         /**
          * Render `core/button` block with Blade template
          */
-        add_filter('render_block', function ($block_content, $block) {
+        add_filter('render_block', function ($block_content, array $block) {
             if ($block['blockName'] === 'core/button') {
                 $html5 = new HTML5();
                 $dom = $html5->loadHTML($block_content);
@@ -28,7 +26,7 @@ class BlocksServiceProvider extends ServiceProvider
 
                 if (
                     isset($block['attrs']['className']) &&
-                    strpos($block['attrs']['className'], 'is-style-outline') !== false
+                    str_contains((string) $block['attrs']['className'], 'is-style-outline')
                 ) {
                     $variant = 'outline';
                 }
@@ -40,13 +38,14 @@ class BlocksServiceProvider extends ServiceProvider
                     'text' => $text ?? null,
                 ]);
             }
+
             return $block_content;
         }, 10, 2);
 
         /**
          * Render `radicle/modal` block with Blade template
          */
-        add_filter('render_block', function ($block_content, $block) {
+        add_filter('render_block', function ($block_content, array $block) {
             if ($block['blockName'] === 'radicle/modal') {
                 return view('blocks.modal', [
                     'block' => $block,
@@ -55,6 +54,7 @@ class BlocksServiceProvider extends ServiceProvider
                     'heading' => $block['attrs']['heading'] ?? null,
                 ]);
             }
+
             return $block_content;
         }, 10, 2);
     }

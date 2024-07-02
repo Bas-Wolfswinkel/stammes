@@ -37,3 +37,6 @@ yarn-error.log
 
 # Bud
 storage/bud/*
+
+# Composer
+.php-cs-fixer.cache
