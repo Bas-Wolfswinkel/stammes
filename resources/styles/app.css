@@ -115,10 +115,12 @@
     }
 }
 
-ul {
-    @apply list-inside list-disc;
-}
 
 * {
     @apply font-lato;
 }
+
+main ul{
+    @apply list-disc list-inside;
+}
+
