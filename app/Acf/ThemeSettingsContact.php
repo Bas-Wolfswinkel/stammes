@@ -24,7 +24,7 @@ class ThemeSettingsContact extends Acf
         return [
             [
                 'type' => 'text',
-                'name' => 'adress',
+                'name' => 'address',
                 'label' => 'Adres',
             ],
             [

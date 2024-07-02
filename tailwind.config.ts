@@ -30,6 +30,41 @@ export default {
             lato: ['Lato', 'sans-serif'],
         },
         fontSize: {
+            subtitle: [
+                '70px',
+                {
+                    lineHeight: '80px',
+                    fontWeight: '700',
+                },
+            ],
+            'subtitle-2': [
+                '45px',
+                {
+                    lineHeight: '45px',
+                    fontWeight: '700',
+                },
+            ],
+            'subtitle-3': [
+                '40px',
+                {
+                    lineHeight: '40px',
+                    fontWeight: '700',
+                },
+            ],
+            'contact-form-label': [
+                '16px',
+                {
+                    lineHeight: '24px',
+                    fontWeight: '700',
+                },
+            ],
+            'contact-form-checkbox-label': [
+                '18px',
+                {
+                    lineHeight: '24px',
+                    fontWeight: '400',
+                },
+            ],
             button: [
                 '16px',
                 {
@@ -42,6 +77,13 @@ export default {
                 {
                     lineHeight: '24px',
                     fontWeight: '300',
+                },
+            ],
+            'text-1': [
+                '20px',
+                {
+                    lineHeight: '41px',
+                    fontWeight: '500',
                 },
             ],
             'footer-title': [

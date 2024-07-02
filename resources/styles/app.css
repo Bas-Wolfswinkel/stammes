@@ -1,7 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import 'swiper.css';
+@import 'imports.css';
 
 /* Font */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
@@ -9,8 +9,8 @@
 /* Define button class */
 @layer components {
     .button {
-        @apply bg-gold text-white font-lato;
-        @apply px-4 py-2 rounded-button;
+        @apply bg-gold font-lato text-white;
+        @apply rounded-button px-4 py-2;
         @apply transition-colors duration-300;
 
         &:hover {
@@ -27,55 +27,56 @@
 
     /* For IE, Edge and Firefox */
     .hide-scrollbar {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
     }
 
-    .text-title-medium{
-        @apply text-[40px] font-[300] uppercase leading-[40px] text-black lg:text-[70px] lg:leading-[80px] ;
+    .text-title-medium {
+        @apply text-[40px] font-[300] uppercase leading-[40px] text-black lg:text-[70px] lg:leading-[80px];
     }
 
-    .text-title-large{
-        @apply text-[50px] font-[300] uppercase leading-[50px] text-black lg:text-[76px] lg:leading-[70px] ;
+    .text-title-large {
+        @apply text-[50px] font-[300] uppercase leading-[50px] text-black lg:text-[76px] lg:leading-[70px];
     }
 }
 
 /* Navigation */
 @media (width >= 1024px) {
     .nav-primary {
-        .menu-item{
-        a{
-            @apply relative;
-        }
-
-        a::after{
-            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='97' height='16' viewBox='0 0 97 16' fill='none'%3E%3Cpath d='M77.0843 6.4365C68.3534 7.34441 57.6723 7.92874 48.8526 8.61772C38.2728 9.50415 26.7834 10.0667 16.1666 10.3403C16.1697 10.2743 17.0345 10.1501 16.1595 10.1417C12.6234 10.1725 12.6116 10.0728 12.6006 9.95668C12.6029 9.90724 15.2499 9.81786 14.3584 9.80868C17.0077 9.66986 21.4312 9.38383 18.7686 9.45594C17.8771 9.44676 14.3466 9.70902 13.4724 9.68413C12.5817 9.65847 14.3426 9.44456 13.4519 9.4189L9.92058 9.69763C9.04402 9.72219 10.7892 9.49101 9.91035 9.56501C7.25794 9.76975 3.7392 10.1317 0.219689 10.5101C0.22047 10.4936 -0.660774 10.617 1.10015 10.4031C8.79127 9.47899 16.5578 8.70709 24.3533 8.01916C32.1488 7.33122 39.9735 6.72725 47.8106 6.20645C63.4842 5.18135 79.1736 4.52037 94.6827 4.52804C98.2321 4.56399 95.5592 4.50348 92.9123 4.59286L94.6811 4.561L89.3817 4.85511L92.0303 4.73278C92.9076 4.69174 92.0287 4.76574 92.0279 4.78222C91.1498 4.83974 90.256 4.88 90.2552 4.89648L90.2521 4.96239L93.7818 4.71662C92.9037 4.77414 92.0248 4.84814 92.0248 4.84814L92.0224 4.89758L85.8379 5.39753L85.8513 5.46423C87.6248 5.33349 90.2623 5.09502 92.0209 4.93054C91.1412 5.02102 91.1404 5.0375 91.1396 5.05398C88.4998 5.34189 85.8497 5.49719 83.2084 5.81807L85.8458 5.57959C84.1469 5.87903 79.7226 6.18154 77.0843 6.4365Z' fill='%23E0B860'/%3E%3C/svg%3E");
-
-            @apply opacity-0 absolute bottom-0 left-1/2 -translate-x-1/2 transition-opacity duration-300 translate-y-full;
-        }
-
-        &.current-menu-item a, a:hover{
-            &::after{
-                @apply  opacity-100;
-            }
-        }
-
-        &:last-child{
-            a{
-                @apply lg:button;
+        .menu-item {
+            a {
+                @apply relative;
             }
 
-            /* Hide marker on last item */
-            a::after{
-                content: '';
+            a::after {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='97' height='16' viewBox='0 0 97 16' fill='none'%3E%3Cpath d='M77.0843 6.4365C68.3534 7.34441 57.6723 7.92874 48.8526 8.61772C38.2728 9.50415 26.7834 10.0667 16.1666 10.3403C16.1697 10.2743 17.0345 10.1501 16.1595 10.1417C12.6234 10.1725 12.6116 10.0728 12.6006 9.95668C12.6029 9.90724 15.2499 9.81786 14.3584 9.80868C17.0077 9.66986 21.4312 9.38383 18.7686 9.45594C17.8771 9.44676 14.3466 9.70902 13.4724 9.68413C12.5817 9.65847 14.3426 9.44456 13.4519 9.4189L9.92058 9.69763C9.04402 9.72219 10.7892 9.49101 9.91035 9.56501C7.25794 9.76975 3.7392 10.1317 0.219689 10.5101C0.22047 10.4936 -0.660774 10.617 1.10015 10.4031C8.79127 9.47899 16.5578 8.70709 24.3533 8.01916C32.1488 7.33122 39.9735 6.72725 47.8106 6.20645C63.4842 5.18135 79.1736 4.52037 94.6827 4.52804C98.2321 4.56399 95.5592 4.50348 92.9123 4.59286L94.6811 4.561L89.3817 4.85511L92.0303 4.73278C92.9076 4.69174 92.0287 4.76574 92.0279 4.78222C91.1498 4.83974 90.256 4.88 90.2552 4.89648L90.2521 4.96239L93.7818 4.71662C92.9037 4.77414 92.0248 4.84814 92.0248 4.84814L92.0224 4.89758L85.8379 5.39753L85.8513 5.46423C87.6248 5.33349 90.2623 5.09502 92.0209 4.93054C91.1412 5.02102 91.1404 5.0375 91.1396 5.05398C88.4998 5.34189 85.8497 5.49719 83.2084 5.81807L85.8458 5.57959C84.1469 5.87903 79.7226 6.18154 77.0843 6.4365Z' fill='%23E0B860'/%3E%3C/svg%3E");
+
+                @apply absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full opacity-0 transition-opacity duration-300;
+            }
+
+            &.current-menu-item a,
+            a:hover {
+                &::after {
+                    @apply opacity-100;
+                }
+            }
+
+            &:last-child {
+                a {
+                    @apply lg:button;
+                }
+
+                /* Hide marker on last item */
+                a::after {
+                    content: '';
+                }
             }
         }
     }
 }
-}
 
 /* Hero section bg images */
-.hero-section{
+.hero-section {
     background-image: var(--desktop-image);
 
     @media (width < 768px) {
@@ -100,21 +101,26 @@
     }
 }
 
-
-#vrijblijvend_contact{
-    input{
-        @apply text-white bg-light-green border-none text-body rounded-[6px] px-4 py-2 placeholder:text-white ;
+#vrijblijvend_contact {
+    input {
+        @apply rounded-[6px] border-none bg-light-green px-4 py-2 text-body text-white placeholder:text-white;
     }
 
-    .jet-form-builder-row{
+    .jet-form-builder-row {
         @apply my-4 p-0;
     }
 
-    button{
+    button {
         @apply button ml-auto mt-3;
     }
+}
+
+
+* {
+    @apply font-lato;
 }
 
 main ul{
     @apply list-disc list-inside;
 }
+

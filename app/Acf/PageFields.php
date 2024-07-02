@@ -111,7 +111,7 @@ class PageFields extends Acf
                                 'name' => 'image',
                                 'label' => 'Image',
                             ],
-                        ]
+                        ],
                     ],
                     [
                         'type' => 'group',
@@ -149,7 +149,7 @@ class PageFields extends Acf
                                     ],
                                 ],
                             ],
-                        ]
+                        ],
                     ],
                     [
                         'type' => 'group',
@@ -204,6 +204,58 @@ class PageFields extends Acf
                             ],
                         ],
                     ],
+                    [
+                        'type' => 'group',
+                        'name' => 'contact_form',
+                        'label' => 'Contact Formulier groot',
+                        'sub_fields' => [
+                            self::titleField(),
+                            [
+                                'type' => 'group',
+                                'name' => 'contact_form_left',
+                                'label' => 'Links',
+                                'wrapper' => [
+                                    'width' => '50%',
+                                ],
+                                'sub_fields' => [
+                                    [
+                                        'type' => 'image',
+                                        'name' => 'image',
+                                        'label' => 'Afbeelding',
+                                    ],
+                                    self::colorPicker('contact_foto', 'Afbeelding blok kleur'),
+                                    [
+                                        'type' => 'true_false',
+                                        'name' => 'contact_info',
+                                        'label' => 'Contactgegevens tonen?',
+                                        'ui' => 1,
+                                        'default_value' => 1,
+                                        'instructions' => 'Deze gevens worden opgehaald vanuit "Theme Settings > Contact info',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'type' => 'group',
+                                'name' => 'contact_form_right',
+                                'label' => 'Rechts',
+                                'wrapper' => [
+                                    'width' => '50%',
+                                ],
+                                'sub_fields' => [
+                                    [
+                                        'type' => 'wysiwyg',
+                                        'name' => 'content',
+                                        'label' => 'Content',
+                                    ],
+                                    [
+                                        'type' => 'text',
+                                        'name' => 'shortcode',
+                                        'label' => 'Formulier shortcode',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ];
@@ -231,16 +283,12 @@ class PageFields extends Acf
     public function options()
     {
         return [
-
-            'hide_on_screen' => [
-                'the_content',
-            ],
+            'hide_on_screen' => ['the_content'],
             'position' => 'normal',
             'label_placement' => 'top',
             'instruction_placement' => 'label',
         ];
     }
-
 
     /**
      * Generate space layout
@@ -293,6 +341,7 @@ class PageFields extends Acf
                 ],
             ];
         }
+
         return $spaceLayout;
     }
 
@@ -303,6 +352,47 @@ class PageFields extends Acf
             'label' => 'Title',
             'type' => 'text',
             'default_value' => 'The title of the section, use these colors to style the title: <gold>, you can also use <bold>',
+        ];
+    }
+
+    /**
+     * ACF color picker field with presets
+     */
+    public function colorPicker(string $name, string $label = null): array
+    {
+        return [
+            'label' => $label ?? 'Kleur selectie',
+            'name' => $name,
+            'type' => 'group',
+            'layout' => 'block',
+            'sub_fields' => [
+                [
+                    'label' => 'Kleur keuze',
+                    'name' => $name . '_choice',
+                    'type' => 'select',
+                    'choices' => [
+                        '#4B847D' => '#4B847D - Donker Groen',
+                        '#BE8A16' => '#BE8A16 - Goud',
+                        '#E0B860' => '#E0B860 - Licht Goud',
+                        'custom' => 'Aangepaste kleur',
+                    ],
+                    'default_value' => 'preset1',
+                ],
+                [
+                    'label' => 'Aangepaste kleur',
+                    'name' => $name . '_custom_choice',
+                    'type' => 'color_picker',
+                    'conditional_logic' => [
+                        [
+                            [
+                                'field' => $name . '_choice',
+                                'operator' => '==',
+                                'value' => 'custom',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ];
     }
 }
