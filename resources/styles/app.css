@@ -31,6 +31,10 @@
         scrollbar-width: none; /* Firefox */
     }
 
+    .text-title-small {
+        @apply text-[40px] font-[300] uppercase leading-[40px] text-black lg:text-[45px] lg:leading-[45px];
+    }
+
     .text-title-medium {
         @apply text-[40px] font-[300] uppercase leading-[40px] text-black lg:text-[70px] lg:leading-[80px];
     }
@@ -104,6 +108,13 @@
 #vrijblijvend_contact {
     input {
         @apply rounded-[6px] border-none bg-light-green px-4 py-2 text-body text-white placeholder:text-white;
+
+        background-color: var(--input-color) !important;
+        color: var(--input-text-color) !important;
+
+        &::placeholder {
+            color: var(--input-text-color) !important;
+        }
     }
 
     .jet-form-builder-row {
@@ -112,6 +123,8 @@
 
     button {
         @apply button ml-auto mt-3;
+
+        background-color: var(--button-color) !important;
     }
 }
 

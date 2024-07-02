@@ -184,6 +184,17 @@ class PageFields extends Acf
                                 'label' => 'Contactformulier shortcode',
                                 'instructions' => 'Voeg hier het shortcode van het contactformulier in',
                             ],
+                            self::colorPicker('achtergrond', 'Achtergrond kleur'),
+                            self::colorPicker('input_color', 'Input kleur'),
+                            self::colorPicker('input_text_color', 'Input tekst kleur'),
+                            self::colorPicker('button_color', 'Button kleur'),
+                            [
+                                'type' => 'number',
+                                'name' => 'margin_bottom',
+                                'label' => 'Margin bottom',
+                                'instructions' => 'Voeg hier de margin bottom in',
+                                'append' => 'px',
+                            ],
                         ],
                     ],
                     [
@@ -254,6 +265,79 @@ class PageFields extends Acf
                                     ],
                                 ],
                             ],
+                        ],
+                    ],
+                    [
+                        'type' => 'group',
+                        'name' => 'onze_werkwijze',
+                        'label' => 'Onze werkwijze',
+                        'sub_fields' => [
+                            self::titleField(),
+                            [
+                                'type' => 'wysiwyg',
+                                'name' => 'content',
+                                'label' => 'Content',
+                            ],
+                            [
+                                'type' => 'image',
+                                'name' => 'image',
+                                'label' => 'Afbeelding',
+                                'wrapper' => [
+                                    'width' => '50%',
+                                ],
+                            ],
+                            self::colorPicker('foto', 'Afbeelding blok kleur'),
+                        ],
+                    ],
+                    [
+                        'type' => 'group',
+                        'name' => 'wat_mag_u_verwachten_usps',
+                        'label' => 'Wat mag u verwachten USPs',
+                        'sub_fields' => [
+                            self::titleField(),
+                            [
+                                'type' => 'repeater',
+                                'name' => 'usps',
+                                'label' => 'USPs',
+                                'layout' => 'block',
+                                'button_label' => 'Voeg USP toe',
+                                'collapsed' => 'title',
+                                'min' => 1,
+                                'sub_fields' => [
+                                    [
+                                        'type' => 'image',
+                                        'name' => 'image',
+                                        'label' => 'Afbeelding',
+                                    ],
+                                    [
+                                        'type' => 'text',
+                                        'name' => 'title',
+                                        'label' => 'Titel',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    [
+                        'type' => 'group',
+                        'name' => 'wat_mag_u_verwachten',
+                        'label' => 'Wat mag u verwachten',
+                        'sub_fields' => [
+                            self::titleField(),
+                            [
+                                'type' => 'wysiwyg',
+                                'name' => 'content',
+                                'label' => 'Content',
+                            ],
+                            [
+                                'type' => 'image',
+                                'name' => 'image',
+                                'label' => 'Afbeelding',
+                                'wrapper' => [
+                                    'width' => '50%',
+                                ],
+                            ],
+                            self::colorPicker('foto', 'Afbeelding blok kleur'),
                         ],
                     ],
                 ],
@@ -371,7 +455,8 @@ class PageFields extends Acf
                     'name' => $name . '_choice',
                     'type' => 'select',
                     'choices' => [
-                        '#4B847D' => '#4B847D - Donker Groen',
+                        '#4B847D' => '#4B847D - Licht Groen',
+                        '#13565E' => '#13565E - Donker Groen',
                         '#BE8A16' => '#BE8A16 - Goud',
                         '#E0B860' => '#E0B860 - Licht Goud',
                         'custom' => 'Aangepaste kleur',
