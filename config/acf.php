@@ -35,6 +35,12 @@ return [
                     'slug' => 'contact-settings',
                     'parent_slug' => 'theme-settings',
                 ],
+                [
+                    'page_title' => __('Footer'),
+                    'menu_title' => __('Footer'),
+                    'slug' => 'footer-settings',
+                    'parent_slug' => 'theme-settings',
+                ],
             ],
         ],
     ],

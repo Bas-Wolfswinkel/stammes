@@ -1,5 +1,5 @@
 @php
-	$title = App\Helper::title(get_sub_field('title'));
+	$main_title = App\Helper::title(get_sub_field('title'));
 	$services = get_sub_field('services_repeater');
 	$color_repeater = get_sub_field('service_colors');
 	$colors = [];
@@ -15,15 +15,19 @@
 				@foreach ($services as $service)
 					@php
 						$color = $colors[$loop->index % count($colors)];
+						if ($title = $service['title']) {
+						    $title = App\Helper::title($title);
+						}
 					@endphp
 					<li>
-						<article class="grid items-center gap-10 pb-[40px] lg:grid-cols-2 lg:pb-[80px]">
+
+						<article class="grid items-center gap-10 pb-[40px] lg:grid-cols-2 lg:pb-[80px]" id="{!! str_replace('&shy;', '', $title) !!}">
 							<div class="@if ($loop->even) lg:order-2 @endif space-y-6 lg:space-y-8">
-								@if ($loop->first && $title)
-									<h2 class="text-70-80-300 text-green pb-8 uppercase">{!! $title !!}</h2>
+								@if ($loop->first && $main_title)
+									<h2 class="text-70-80-300 text-green pb-8 uppercase">{!! $main_title !!}</h2>
 								@endif
-								@if ($title = $service['title'])
-									<h3 class="text-45-45-700 text-green hyphens-auto break-words uppercase" lang="nl">{!! App\Helper::title($title) !!}</h3>
+								@if ($title)
+									<h3 class="text-45-45-700 text-green hyphens-auto break-words uppercase" lang="nl">{!! $title !!}</h3>
 								@endif
 								@if ($content = $service['content'])
 									<x-wissiewig>{!! $content !!}</x-wissiewig>
