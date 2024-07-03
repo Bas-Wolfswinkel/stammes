@@ -24,6 +24,7 @@ export default {
             hoverGold: '#997512',
             green: '#13565E',
             'light-green': '#ADCECA',
+            'opacity-green': '#ADCECA33',
             'dark-green': '#4B847D',
         },
         fontFamily: {
@@ -35,6 +36,13 @@ export default {
                 {
                     lineHeight: '80px',
                     fontWeight: '700',
+                },
+            ],
+            '70-80-300': [
+                '70px',
+                {
+                    lineHeight: '80px',
+                    fontWeight: '300',
                 },
             ],
             'subtitle-2': [
@@ -98,6 +106,13 @@ export default {
                 {
                     lineHeight: '30px',
                     fontWeight: '700',
+                },
+            ],
+            '40-40-300': [
+                '40px',
+                {
+                    lineHeight: '40px',
+                    fontWeight: '300',
                 },
             ],
             '20-29-400': [

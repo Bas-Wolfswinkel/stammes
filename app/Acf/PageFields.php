@@ -402,6 +402,25 @@ class PageFields extends Acf
                             ],
                         ],
                     ],
+                    [
+                        'type' => 'group',
+                        'name' => 'mid_section',
+                        'label' => 'Midden sectie',
+                        'sub_fields' => [
+                            [
+                                'type' => 'image',
+                                'name' => 'image',
+                                'label' => 'Afbeelding',
+                            ],
+                            self::colorPicker('image_color', 'Afbeelding blok kleur'),
+                            self::titleField(),
+                            [
+                                'type' => 'wysiwyg',
+                                'name' => 'content',
+                                'label' => 'Content',
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ];
