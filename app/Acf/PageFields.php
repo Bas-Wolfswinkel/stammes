@@ -421,6 +421,48 @@ class PageFields extends Acf
                             ],
                         ],
                     ],
+                    [
+                        'type' => 'group',
+                        'name' => 'services',
+                        'label' => 'Diensten',
+                        'sub_fields' => [
+                            self::titleField(),
+                            [
+                                'type' => 'repeater',
+                                'name' => 'services_repeater',
+                                'label' => 'Diensten',
+                                'layout' => 'block',
+                                'button_label' => 'Voeg dienst toe',
+                                'sub_fields' => [
+                                    [
+                                        'type' => 'image',
+                                        'name' => 'image',
+                                        'label' => 'Afbeelding',
+                                    ],
+                                    [
+                                        'type' => 'text',
+                                        'name' => 'title',
+                                        'label' => 'Titel',
+                                    ],
+                                    [
+                                        'type' => 'wysiwyg',
+                                        'name' => 'content',
+                                        'label' => 'Content',
+                                    ],
+                                ],
+                            ],
+                            [
+                                'type' => 'repeater',
+                                'name' => 'service_colors',
+                                'label' => 'Kleuren',
+                                'layout' => 'block',
+                                'button_label' => 'Voeg kleur toe',
+                                'instructions' => 'Deze kleuren worden op volgorde gebruikt voor de blokken achter de service afbeeldingen',
+                                'min' => 1,
+                                'sub_fields' => [self::colorPicker('service_color', 'Kleur')],
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ];
