@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class ProjectLazyLoader extends Component
 {
-    public array $selected_posts;
+    public ?array $selected_posts = null;
 
     public bool $manual;
 
@@ -25,7 +25,7 @@ class ProjectLazyLoader extends Component
     /**
      * Mount the component.
      */
-    public function mount(array $selected_posts, bool $manual): void
+    public function mount(?array $selected_posts, bool $manual): void
     {
         $this->selected_posts = $selected_posts;
         $this->manual = $manual;
@@ -50,6 +50,7 @@ class ProjectLazyLoader extends Component
         if ($this->manual) {
             return count($this->selected_posts);
         }
+
         return (int) wp_count_posts('project')->publish;
     }
 

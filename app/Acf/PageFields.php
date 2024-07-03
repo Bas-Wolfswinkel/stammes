@@ -429,6 +429,7 @@ class PageFields extends Acf
                             ],
                         ],
                     ],
+                    self::reviewsLayout(),
                 ],
             ],
         ];
@@ -649,6 +650,67 @@ class PageFields extends Acf
                     'min' => 1,
                 ],
                 self::colorPicker('achtergrond', 'Achtergrond kleur'),
+            ],
+        ];
+    }
+
+    public static function reviewsLayout(): array
+    {
+        return [
+            'type' => 'group',
+            'name' => 'reviews',
+            'label' => 'Reviews',
+            'sub_fields' => [
+                self::titleField(),
+                [
+                    'type' => 'repeater',
+                    'name' => 'reviews',
+                    'label' => 'Reviews',
+                    'layout' => 'block',
+                    'button_label' => 'Voeg review toe',
+                    'sub_fields' => [
+                        [
+                            'type' => 'text',
+                            'name' => 'title',
+                            'label' => 'Title',
+                            'wrapper' => [
+                                'width' => '25%',
+                            ],
+                        ],
+                        [
+                            'type' => 'text',
+                            'name' => 'type',
+                            'label' => 'Type klant',
+                            'wrapper' => [
+                                'width' => '25%',
+                            ],
+                        ],
+                        [
+                            'type' => 'text',
+                            'name' => 'name',
+                            'label' => 'Klant naam',
+                            'wrapper' => [
+                                'width' => '25%',
+                            ],
+                        ],
+                        [
+                            'type' => 'number',
+                            'name' => 'rating',
+                            'label' => 'Rating',
+                            'default_value' => 5,
+                            'min' => 1,
+                            'max' => 5,
+                            'wrapper' => [
+                                'width' => '25%',
+                            ],
+                        ],
+                        [
+                            'type' => 'wysiwyg',
+                            'name' => 'content',
+                            'label' => 'Content',
+                        ],
+                    ],
+                ],
             ],
         ];
     }

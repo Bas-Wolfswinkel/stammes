@@ -116,11 +116,32 @@ export default {
 					fontWeight: '700',
 				},
 			],
+			'45-45-300': [
+				'45px',
+				{
+					lineHeight: '45px',
+					fontWeight: '300',
+				},
+			],
 			'40-40-300': [
 				'40px',
 				{
 					lineHeight: '40px',
 					fontWeight: '300',
+				},
+			],
+			'30-36-700': [
+				'30px',
+				{
+					lineHeight: '36px',
+					fontWeight: '700',
+				},
+			],
+			'20-36-700': [
+				'20px',
+				{
+					lineHeight: '36px',
+					fontWeight: '700',
 				},
 			],
 			'20-29-400': [
@@ -135,6 +156,13 @@ export default {
 				{
 					lineHeight: '29px',
 					fontWeight: '300',
+				},
+			],
+			'16-24-400': [
+				'16px',
+				{
+					lineHeight: '24px',
+					fontWeight: '400',
 				},
 			],
 			'22-26-800': [
