@@ -39,14 +39,19 @@ class ProjectFields extends Acf
                 'layouts' => [
                     PageFields::heroLayout(),
                     PageFields::spaceLayout(),
-                    // [
-                    //     'type' => 'group',
-                    //     'name' => 'project_details',
-                    //     'label' => 'Project Details',
-                    //     'sub_fields' => [],
-                    // ]
+                    [
+                        'type' => 'group',
+                        'name' => 'project_details',
+                        'label' => 'Project Details',
+                        'sub_fields' => [
+                            [
+                                'type' => 'gallery',
+                                'name' => 'gallery',
+                                'label' => 'Gallerij',
+                            ]
+                        ],
+                    ],
                     PageFields::projectsLayout(),
-
                 ],
             ],
         ];
