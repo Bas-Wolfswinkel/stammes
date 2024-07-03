@@ -111,5 +111,13 @@ class ThemeServiceProvider extends SageServiceProvider
             // Add the modified role
             add_role('outlawz_klant', 'Outlawz klant', $admin_capabilities);
         });
+
+        add_filter('wp_head', function (): void {
+            echo Blade::render('@livewireStyles');
+        });
+
+        add_filter('wp_footer', function (): void {
+            echo Blade::render('@livewireScripts');
+        });
     }
 }
