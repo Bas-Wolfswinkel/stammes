@@ -531,7 +531,7 @@ class PageFields extends Acf
     /**
      * ACF color picker field with presets
      */
-    public function colorPicker(string $name, string $label = null): array
+    public static function colorPicker(string $name, string $label = null): array
     {
         return [
             'label' => $label ?? 'Kleur selectie',
@@ -648,6 +648,7 @@ class PageFields extends Acf
                     'post_type' => 'project',
                     'min' => 1,
                 ],
+                self::colorPicker('achtergrond', 'Achtergrond kleur'),
             ],
         ];
     }

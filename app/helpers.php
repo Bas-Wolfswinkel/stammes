@@ -40,12 +40,13 @@ class Helper
     {
         $colorData = $group[$name] ?? (get_sub_field($name) ?? null);
 
-        if (! $colorData || ! is_array($colorData)) {
+        if (!$colorData || !is_array($colorData)) {
             return null;
         }
 
         $choice = $colorData["{$name}_choice"] ?? null;
         $customChoice = $colorData["{$name}_custom_choice"] ?? null;
+        $customRgb = $colorData["{$name}_custom_rgb"] ?? null;
 
         return $choice === 'custom' ? $customChoice : $choice;
     }

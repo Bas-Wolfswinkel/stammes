@@ -1,4 +1,5 @@
-<div class="bg-light-green/20 py-[100px]">
+<div class="bg-light-green/20 py-[100px]"
+    @if ($color = App\Helper::get_colorpicker('achtergrond')) style="background-color: {{ $color }};" @endif>
     <x-container>
         @if ($title = get_sub_field('title'))
             <h2

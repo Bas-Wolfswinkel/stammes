@@ -1,6 +1,6 @@
 import alpine from 'alpinejs';
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Thumbs } from 'swiper/modules';
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -11,7 +11,7 @@ Object.assign(window, {Alpine: alpine}).Alpine.start();
 import.meta.webpackHot?.accept(console.error);
 
 addEventListener('DOMContentLoaded', () => {
-    Swiper.use([Navigation, Pagination]);
+    Swiper.use([Navigation, Pagination, Thumbs]);
 
     const projectenSwiper = document.querySelector('.projecten-swiper') as HTMLElement;
     if (projectenSwiper) {
@@ -33,4 +33,25 @@ addEventListener('DOMContentLoaded', () => {
             },
         });
     }
+
+    
+    let projectDetailThumbsSwiper: Swiper;
+    if (document.querySelector('.project-detail-slider-thumbs')) {
+        projectDetailThumbsSwiper = new Swiper(".project-detail-slider-thumbs", {
+            spaceBetween: 10,
+            slidesPerView: 5,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+    }
+    if (document.querySelector('.project-detail-slider')) {
+        new Swiper(".project-detail-slider", {
+            spaceBetween: 10,
+            slidesPerView: 1,
+            thumbs: {
+                swiper: projectDetailThumbsSwiper,
+            },
+        });
+    }
+
 });
