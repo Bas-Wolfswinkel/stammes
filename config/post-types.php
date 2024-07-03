@@ -1,8 +1,7 @@
 <?php
 
 return [
-
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Post Types
     |--------------------------------------------------------------------------
@@ -12,20 +11,22 @@ return [
     |
     */
 
-    'post_types' => [
-        'project' => [
-            'menu_icon' => 'dashicons-admin-customizer',
-            'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
-            'show_in_rest' => true,
-            'names' => [
-                'singular' => 'Project',
-                'plural' => 'Projecten',
-                'slug' => 'projecten',
-            ]
-        ],
-    ],
+	'post_types' => [
+		'project' => [
+			'menu_icon' => 'dashicons-admin-customizer',
+			'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+			'show_in_rest' => true,
+			'public' => true,
+			'has_archive' => false,
+			'names' => [
+				'singular' => 'Project',
+				'plural' => 'Projecten',
+				'slug' => 'projecten',
+			],
+		],
+	],
 
-    /*
+	/*
     |--------------------------------------------------------------------------
     | Taxonomies
     |--------------------------------------------------------------------------
@@ -35,14 +36,14 @@ return [
     |
     */
 
-    'taxonomies' => [
-        'seed_category' => [
-            'post_types' => ['seed'],
-            'meta_box' => 'radio',
-            'names' => [
-                'singular' => 'Category',
-                'plural' => 'Categories',
-            ],
-        ],
-    ],
+	'taxonomies' => [
+		'seed_category' => [
+			'post_types' => ['seed'],
+			'meta_box' => 'radio',
+			'names' => [
+				'singular' => 'Category',
+				'plural' => 'Categories',
+			],
+		],
+	],
 ];

@@ -391,6 +391,44 @@ class PageFields extends Acf
                             ],
                         ],
                     ],
+                    [
+                        'type' => 'group',
+                        'name' => 'projects_grid',
+                        'label' => 'Projecten Grid',
+                        'render_template' => 'livewire:projects-grid',
+                        'sub_fields' => [
+                            self::titleField(),
+                            [
+                                'type' => 'true_false',
+                                'name' => 'manual_projects',
+                                'label' => 'Projecten handmatig selecteren',
+                                'instructions' => 'Selecteer deze optie om de projecten handmatig te selecteren. Als deze uitgeschakeld is, worden alle projecten getoond met een "meer laden" knop.',
+                                'ui' => 1,
+                                'default_value' => 0,
+                            ],
+                            [
+                                'type' => 'relationship',
+                                'name' => 'projecten',
+                                'label' => 'Projecten',
+                                'instructions' => 'Selecteer de projecten die je wilt tonen',
+                                'post_type' => 'project',
+                                'multiple' => true,
+                                'min' => 1,
+                                'ui' => 1,
+                                'max' => '',
+                                'return_format' => 'id',
+                                'conditional_logic' => [
+                                    [
+                                        [
+                                            'field' => 'manual_projects',
+                                            'operator' => '==',
+                                            'value' => '1',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ];
