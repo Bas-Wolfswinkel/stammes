@@ -51,6 +51,13 @@ export default {
                     fontWeight: '700',
                 },
             ],
+            'subtitle-4': [
+                '45px',
+                {
+                    lineHeight: '45px',
+                    fontWeight: '300',
+                },
+            ],
             'contact-form-label': [
                 '16px',
                 {
@@ -91,6 +98,34 @@ export default {
                 {
                     lineHeight: '30px',
                     fontWeight: '700',
+                },
+            ],
+            '20-29-400': [
+                '20px',
+                {
+                    lineHeight: '29px',
+                    fontWeight: '400',
+                },
+            ],
+            '19-29-300': [
+                '19px',
+                {
+                    lineHeight: '29px',
+                    fontWeight: '300',
+                },
+            ],
+            '22-26-800': [
+                '22px',
+                {
+                    lineHeight: '26px',
+                    fontWeight: '800',
+                },
+            ],
+            '22-26-600': [
+                '22px',
+                {
+                    lineHeight: '26px',
+                    fontWeight: '600',
                 },
             ],
         },

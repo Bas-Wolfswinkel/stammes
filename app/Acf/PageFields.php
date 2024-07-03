@@ -340,6 +340,68 @@ class PageFields extends Acf
                             self::colorPicker('foto', 'Afbeelding blok kleur'),
                         ],
                     ],
+                    [
+                        'type' => 'group',
+                        'name' => 'our_team',
+                        'label' => 'Ons team',
+                        'sub_fields' => [
+                            self::titleField(),
+                            [
+                                'type' => 'wysiwyg',
+                                'name' => 'content',
+                                'label' => 'Content',
+                            ],
+                            [
+                                'type' => 'repeater',
+                                'name' => 'team_repeater',
+                                'label' => 'Team',
+                                'layout' => 'block',
+                                'button_label' => 'Voeg teamlid toe',
+                                'sub_fields' => [
+                                    [
+                                        'type' => 'image',
+                                        'name' => 'image',
+                                        'label' => 'Afbeelding',
+                                        'wrapper' => [
+                                            'width' => '20%',
+                                        ],
+                                    ],
+                                    [
+                                        'type' => 'text',
+                                        'name' => 'name',
+                                        'label' => 'Naam',
+                                        'wrapper' => [
+                                            'width' => '20%',
+                                        ],
+                                    ],
+                                    [
+                                        'type' => 'text',
+                                        'name' => 'last_name',
+                                        'label' => 'Achternaam',
+                                        'wrapper' => [
+                                            'width' => '20%',
+                                        ],
+                                    ],
+                                    [
+                                        'type' => 'text',
+                                        'name' => 'role',
+                                        'label' => 'Functie',
+                                        'wrapper' => [
+                                            'width' => '20%',
+                                        ],
+                                    ],
+                                    [
+                                        'type' => 'text',
+                                        'name' => 'experience',
+                                        'label' => 'Ervaring',
+                                        'wrapper' => [
+                                            'width' => '20%',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ];
