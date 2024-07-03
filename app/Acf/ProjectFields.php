@@ -22,12 +22,33 @@ class ProjectFields extends Acf
     public function fields()
     {
         return [
+
             [
                 'type' => 'text',
                 'name' => 'location',
                 'label' => 'Locatie',
             ],
+            [
+                'type' => 'flexible_content',
+                'name' => 'page_content',
+                'label' => 'Page Content',
+                'instructions' => 'Add content to the page',
+                'layout' => 'block',
+                'button_label' => 'Add Content',
+                'min' => 1,
+                'layouts' => [
+                    PageFields::heroLayout(),
+                    PageFields::spaceLayout(),
+                    // [
+                    //     'type' => 'group',
+                    //     'name' => 'project_details',
+                    //     'label' => 'Project Details',
+                    //     'sub_fields' => [],
+                    // ]
+                    PageFields::projectsLayout(),
 
+                ],
+            ],
         ];
     }
 
@@ -52,10 +73,6 @@ class ProjectFields extends Acf
      */
     public function options()
     {
-        return [
-            'hide_on_screen' => [
-                'the_content',
-            ],
-        ];
+        return [];
     }
 }

@@ -31,64 +31,7 @@ class PageFields extends Acf
                 'button_label' => 'Add Content',
                 'min' => 1,
                 'layouts' => [
-                    [
-                        'type' => 'group',
-                        'name' => 'hero',
-                        'label' => 'Hero',
-                        'sub_fields' => [
-                            [
-                                'type' => 'number',
-                                'name' => 'max_width_desktop',
-                                'label' => 'Max Width (Desktop)',
-                                'instructions' => 'The max width of the hero title for desktop',
-                                'default_value' => '1200px',
-                                'append' => 'px',
-                                'wrapper' => [
-                                    'width' => '50%',
-                                ],
-                            ],
-                            [
-                                'type' => 'number',
-                                'name' => 'max_width_mobile',
-                                'label' => 'Max Width (Mobile)',
-                                'instructions' => 'The max width of the hero title for mobile',
-                                'default_value' => '768px',
-                                'append' => 'px',
-                                'wrapper' => [
-                                    'width' => '50%',
-                                ],
-                            ],
-                            [
-                                'name' => 'hero_title',
-                                'label' => 'Hero Title',
-                                'type' => 'textarea',
-                                'default_value' => 'The title of the hero section, use these colors to style the title: <gold>, you can also use <bold>',
-                            ],
-                            [
-                                'name' => 'link',
-                                'label' => 'Link',
-                                'type' => 'link',
-                            ],
-                            [
-                                'name' => 'image',
-                                'label' => 'Image',
-                                'type' => 'image',
-                                'instructions' => 'The image for the hero section',
-                                'wrapper' => [
-                                    'width' => '50%',
-                                ],
-                            ],
-                            [
-                                'name' => 'image_mobile',
-                                'label' => 'Image Mobile (optional)',
-                                'type' => 'image',
-                                'instructions' => 'The image for the hero section on mobile',
-                                'wrapper' => [
-                                    'width' => '50%',
-                                ],
-                            ],
-                        ],
-                    ],
+                    self::heroLayout(),
                     self::spaceLayout(),
                     [
                         'type' => 'group',
@@ -151,22 +94,7 @@ class PageFields extends Acf
                             ],
                         ],
                     ],
-                    [
-                        'type' => 'group',
-                        'name' => 'projecten',
-                        'label' => 'Projecten',
-                        'sub_fields' => [
-                            self::titleField(),
-                            [
-                                'type' => 'relationship',
-                                'name' => 'projecten',
-                                'label' => 'Projecten',
-                                'instructions' => 'Selecteer de projecten die je wilt tonen',
-                                'post_type' => 'project',
-                                'min' => 1,
-                            ],
-                        ],
-                    ],
+                    self::projectsLayout(),
                     [
                         'type' => 'group',
                         'name' => 'vrijblijvend_contact',
@@ -552,7 +480,7 @@ class PageFields extends Acf
         return $spaceLayout;
     }
 
-    public function titleField(): array
+    public static function titleField(): array
     {
         return [
             'name' => 'title',
@@ -599,6 +527,88 @@ class PageFields extends Acf
                             ],
                         ],
                     ],
+                ],
+            ],
+        ];
+    }
+
+    public static function heroLayout(): array
+    {
+        return [
+            'type' => 'group',
+            'name' => 'hero',
+            'label' => 'Hero',
+            'sub_fields' => [
+                [
+                    'type' => 'number',
+                    'name' => 'max_width_desktop',
+                    'label' => 'Max Width (Desktop)',
+                    'instructions' => 'The max width of the hero title for desktop',
+                    'default_value' => '1200px',
+                    'append' => 'px',
+                    'wrapper' => [
+                        'width' => '50%',
+                    ],
+                ],
+                [
+                    'type' => 'number',
+                    'name' => 'max_width_mobile',
+                    'label' => 'Max Width (Mobile)',
+                    'instructions' => 'The max width of the hero title for mobile',
+                    'default_value' => '768px',
+                    'append' => 'px',
+                    'wrapper' => [
+                        'width' => '50%',
+                    ],
+                ],
+                [
+                    'name' => 'hero_title',
+                    'label' => 'Hero Title',
+                    'type' => 'textarea',
+                    'default_value' => 'The title of the hero section, use these colors to style the title: <gold>, you can also use <bold>',
+                ],
+                [
+                    'name' => 'link',
+                    'label' => 'Link',
+                    'type' => 'link',
+                ],
+                [
+                    'name' => 'image',
+                    'label' => 'Image',
+                    'type' => 'image',
+                    'instructions' => 'The image for the hero section',
+                    'wrapper' => [
+                        'width' => '50%',
+                    ],
+                ],
+                [
+                    'name' => 'image_mobile',
+                    'label' => 'Image Mobile (optional)',
+                    'type' => 'image',
+                    'instructions' => 'The image for the hero section on mobile',
+                    'wrapper' => [
+                        'width' => '50%',
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    public static function projectsLayout(): array
+    {
+        return [
+            'type' => 'group',
+            'name' => 'projecten',
+            'label' => 'Projecten',
+            'sub_fields' => [
+                self::titleField(),
+                [
+                    'type' => 'relationship',
+                    'name' => 'projecten',
+                    'label' => 'Projecten',
+                    'instructions' => 'Selecteer de projecten die je wilt tonen',
+                    'post_type' => 'project',
+                    'min' => 1,
                 ],
             ],
         ];
