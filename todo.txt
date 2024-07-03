@@ -1,0 +1,7 @@
+Forms
+  anticaptcha
+  custom checkbox
+  Footer texture overlay on 'vrijblijvend contact'
+
+Hero
+  nl2br? (design has specific linebreaks)
