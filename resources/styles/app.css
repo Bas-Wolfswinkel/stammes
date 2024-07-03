@@ -83,9 +83,19 @@
 .hero-section {
     background-image: var(--desktop-image);
 
+    h1{
+        max-width: var(--max-width-desktop);
+    }
+
     @media (width < 768px) {
         background-image: var(--mobile-image);
+
+        h1{
+            max-width: var(--max-width-mobile);
+        }
     }
+
+    
 }
 
 /* Space component */

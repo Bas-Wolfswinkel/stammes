@@ -2,8 +2,8 @@
     @if ($img = get_sub_field('image')) style="@if ($mobile_img = get_sub_field('image_mobile')) --desktop-image:url({{ $img['url'] }}); --mobile-image:url({{ $mobile_img['url'] }}); @else --desktop-image:url({{ $img['url'] }}); --mobile-image:url({{ $img['url'] }}); @endif"
     @endif>
     <x-container>
-        <h1
-            class="font-lato text-[40px] font-light uppercase leading-[40px] tracking-[1.2px] text-white md:text-[79.23px] md:leading-[77.4px]">
+        <h1 class="font-lato text-[40px] font-light uppercase leading-[40px] tracking-[1.2px] text-white md:text-[79.23px] md:leading-[77.4px]"
+            style="@if ($max_width_desktop = get_sub_field('max_width_desktop')) --max-width-desktop:{{ $max_width_desktop }}px; @endif @if ($max_width_mobile = get_sub_field('max_width_mobile')) --max-width-mobile:{{ $max_width_mobile }}px; @endif">
             {!! App\Helper::title(get_sub_field('hero_title')) !!}
         </h1>
 
