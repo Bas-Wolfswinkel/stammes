@@ -53,5 +53,20 @@ class ThemeServiceProvider extends SageServiceProvider
     public function boot(): void
     {
         parent::boot();
+
+        // Register a new user role
+        add_action('init', function () {
+            // Get the administrator role capabilities
+            $admin_capabilities = get_role('administrator')->capabilities;
+
+            // Modify capabilities to restrict plugin and update related actions
+            $admin_capabilities['update_core'] = false; // Disallow updating WordPress core
+            $admin_capabilities['update_plugins'] = false; // Disallow updating plugins
+            $admin_capabilities['update_themes'] = false; // Disallow updating themes
+            $admin_capabilities['activate_plugins'] = false; // Disallow activating plugins
+
+            // Add the modified role
+            add_role('outlawz_klant', 'Outlawz klant', $admin_capabilities);
+        });
     }
 }
