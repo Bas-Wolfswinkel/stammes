@@ -24,6 +24,7 @@ export default {
             hoverGold: '#997512',
             green: '#13565E',
             'light-green': '#ADCECA',
+            'opacity-green': '#ADCECA33',
             'dark-green': '#4B847D',
         },
         fontFamily: {
@@ -35,6 +36,13 @@ export default {
                 {
                     lineHeight: '80px',
                     fontWeight: '700',
+                },
+            ],
+            '70-80-300': [
+                '70px',
+                {
+                    lineHeight: '80px',
+                    fontWeight: '300',
                 },
             ],
             'subtitle-2': [
@@ -49,6 +57,13 @@ export default {
                 {
                     lineHeight: '40px',
                     fontWeight: '700',
+                },
+            ],
+            'subtitle-4': [
+                '45px',
+                {
+                    lineHeight: '45px',
+                    fontWeight: '300',
                 },
             ],
             'contact-form-label': [
@@ -91,6 +106,41 @@ export default {
                 {
                     lineHeight: '30px',
                     fontWeight: '700',
+                },
+            ],
+            '40-40-300': [
+                '40px',
+                {
+                    lineHeight: '40px',
+                    fontWeight: '300',
+                },
+            ],
+            '20-29-400': [
+                '20px',
+                {
+                    lineHeight: '29px',
+                    fontWeight: '400',
+                },
+            ],
+            '19-29-300': [
+                '19px',
+                {
+                    lineHeight: '29px',
+                    fontWeight: '300',
+                },
+            ],
+            '22-26-800': [
+                '22px',
+                {
+                    lineHeight: '26px',
+                    fontWeight: '800',
+                },
+            ],
+            '22-26-600': [
+                '22px',
+                {
+                    lineHeight: '26px',
+                    fontWeight: '600',
                 },
             ],
         },
