@@ -8,18 +8,27 @@ namespace App;
 
 class Helper
 {
-    public static function title(string $title = null): array|string
+    /**
+     * Replace the title tags with the correct HTML tags.
+     * /i = case-insensitive matching
+     */
+    public static function title(?string $title = null): string
     {
         if (is_null($title)) {
             $title = get_sub_field('title') ?? 'Default Title';
         }
-        $title = str_replace('<gold>', '<span class="text-gold font-bold">', $title);
-        $title = str_replace('</gold>', '</span>', $title);
-        $title = str_replace('<green>', '<span class="text-green font-bold">', $title);
-        $title = str_replace('</green>', '</span>', $title);
-        $title = str_replace('<bold>', '<span class="font-bold">', $title);
 
-        return str_replace('</bold>', '</span>', $title);
+        $replacements = [
+            '/<gold>/i' => '<span class="text-gold font-bold">',
+            '/<\/gold>/i' => '</span>',
+            '/<green>/i' => '<span class="text-green font-bold">',
+            '/<\/green>/i' => '</span>',
+            '/<bold>/i' => '<span class="font-bold">',
+            '/<\/bold>/i' => '</span>',
+            '/\[breek\]/i' => '&shy;',
+        ];
+
+        return preg_replace(array_keys($replacements), array_values($replacements), $title);
     }
 
     /**
