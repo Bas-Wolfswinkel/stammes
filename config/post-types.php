@@ -23,16 +23,6 @@ return [
                 'slug' => 'projecten',
             ]
         ],
-        'service' => [
-            'menu_icon' => 'dashicons-admin-customizer',
-            'supports' => ['title', 'editor', 'thumbnail'],
-            'show_in_rest' => true,
-            'names' => [
-                'singular' => 'Service',
-                'plural' => 'Services',
-                'slug' => 'services',
-            ]
-        ],
     ],
 
     /*
