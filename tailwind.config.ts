@@ -109,6 +109,13 @@ export default {
 					fontWeight: '300',
 				},
 			],
+			'70-70-300': [
+				'70px',
+				{
+					lineHeight: '70px',
+					fontWeight: '300',
+				},
+			],
 			'45-45-700': [
 				'45px',
 				{

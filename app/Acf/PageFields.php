@@ -395,9 +395,12 @@ class PageFields extends Acf
                         'type' => 'group',
                         'name' => 'projects_grid',
                         'label' => 'Projecten Grid',
-                        'render_template' => 'livewire:projects-grid',
                         'sub_fields' => [
-                            self::titleField(),
+                            [
+                                'type' => 'textarea',
+                                'name' => 'title',
+                                'label' => 'Titel',
+                            ],
                             [
                                 'type' => 'true_false',
                                 'name' => 'manual_projects',

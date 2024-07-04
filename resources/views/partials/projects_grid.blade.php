@@ -5,8 +5,6 @@
 @endphp
 
 <div>
-	@if ($title)
-		<h2 class="text-70-70-300 text-green">{!! $title !!}</h2>
-	@endif
-	<livewire:project-lazy-loader lazy :selected_posts="$selected_posts" :manual="$manual_projects" />
+
+	<livewire:project-lazy-loader lazy :title="$title" :selected_posts="$selected_posts" :manual="$manual_projects" />
 </div>

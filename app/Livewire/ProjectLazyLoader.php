@@ -7,6 +7,8 @@ use Livewire\Component;
 
 class ProjectLazyLoader extends Component
 {
+    public ?string $title = null;
+
     public ?array $selected_posts = null;
 
     public bool $manual;
