@@ -1,6 +1,5 @@
-import alpine from 'alpinejs';
+// import alpine from 'alpinejs';
 import Swiper from 'swiper';
-import { Navigation, Pagination, Thumbs } from 'swiper/modules';
 import { Navigation, Pagination, Thumbs } from 'swiper/modules';
 // import Swiper and modules styles
 import 'swiper/css';
@@ -62,8 +61,8 @@ addEventListener('DOMContentLoaded', () => {
 				type: 'progressbar',
 			},
 			navigation: {
-				nextEl: '.swiper-button-next.c-white',
-				prevEl: '.swiper-button-prev.c-white',
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
 			},
 			breakpoints: {
 				1024: {

@@ -536,7 +536,6 @@ class PageFields extends Acf
      * ACF color picker field with presets
      */
     public static function colorPicker(string $name, string $label = null): array
-    public static function colorPicker(string $name, string $label = null): array
     {
         return [
             'label' => $label ?? 'Kleur selectie',
