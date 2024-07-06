@@ -1,6 +1,7 @@
 import alpine from 'alpinejs';
 import Swiper from 'swiper';
 import { Navigation, Pagination, Thumbs } from 'swiper/modules';
+import { Navigation, Pagination, Thumbs } from 'swiper/modules';
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
