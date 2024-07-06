@@ -10,8 +10,8 @@
             {!! App\Helper::title(get_sub_field('hero_title')) !!}
         </h1>
 
-        @if ($link = get_sub_field('link'))
-            <x-button class="mt-20 md:mt-12" :href="$link['url']">{{ $link['title'] }}</x-button>
-        @endif
-    </x-container>
+		@if ($link = get_sub_field('link'))
+			<x-button class="mt-20 md:mt-12" :href="$link['url']">{{ $link['title'] }}</x-button>
+		@endif
+	</x-container>
 </div>
