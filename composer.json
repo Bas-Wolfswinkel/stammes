@@ -59,6 +59,7 @@
         "composer/installers": "^2.2",
         "guzzlehttp/guzzle": "^7.5",
         "johnbillion/extended-cpts": "^5.0",
+        "livewire/livewire": "^3.5",
         "log1x/acorn-disable-media-pages": "^1.0",
         "masterminds/html5": "^2.8",
         "oscarotero/env": "^2.1",

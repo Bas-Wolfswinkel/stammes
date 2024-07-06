@@ -1,15 +1,15 @@
 .wissiewig {
-    @apply font-lato text-body text-black;
+	@apply font-lato text-body text-black;
 
-    p {
-        @apply text-body text-black;
-    }
+	p {
+		@apply text-body;
+	}
 
-    a {
-        @apply underline;
-    }
+	a {
+		@apply underline;
+	}
 
-    ul {
-        @apply list-disc;
-    }
+	ul {
+		@apply list-disc;
+	}
 }
