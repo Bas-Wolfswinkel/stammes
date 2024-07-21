@@ -391,6 +391,48 @@ class PageFields extends Acf
                             ],
                         ],
                     ],
+                    [
+                        'type' => 'group',
+                        'name' => 'projects_grid',
+                        'label' => 'Projecten Grid',
+                        'sub_fields' => [
+                            [
+                                'type' => 'textarea',
+                                'name' => 'title',
+                                'label' => 'Titel',
+                            ],
+                            [
+                                'type' => 'true_false',
+                                'name' => 'manual_projects',
+                                'label' => 'Projecten handmatig selecteren',
+                                'instructions' => 'Selecteer deze optie om de projecten handmatig te selecteren. Als deze uitgeschakeld is, worden alle projecten getoond met een "meer laden" knop.',
+                                'ui' => 1,
+                                'default_value' => 0,
+                            ],
+                            [
+                                'type' => 'relationship',
+                                'name' => 'projecten',
+                                'label' => 'Projecten',
+                                'instructions' => 'Selecteer de projecten die je wilt tonen',
+                                'post_type' => 'project',
+                                'multiple' => true,
+                                'min' => 1,
+                                'ui' => 1,
+                                'max' => '',
+                                'return_format' => 'id',
+                                'conditional_logic' => [
+                                    [
+                                        [
+                                            'field' => 'manual_projects',
+                                            'operator' => '==',
+                                            'value' => '1',
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    self::reviewsLayout(),
                 ],
             ],
         ];
@@ -609,6 +651,68 @@ class PageFields extends Acf
                     'instructions' => 'Selecteer de projecten die je wilt tonen',
                     'post_type' => 'project',
                     'min' => 1,
+                ],
+                self::colorPicker('achtergrond', 'Achtergrond kleur'),
+            ],
+        ];
+    }
+
+    public static function reviewsLayout(): array
+    {
+        return [
+            'type' => 'group',
+            'name' => 'reviews',
+            'label' => 'Reviews',
+            'sub_fields' => [
+                self::titleField(),
+                [
+                    'type' => 'repeater',
+                    'name' => 'reviews',
+                    'label' => 'Reviews',
+                    'layout' => 'block',
+                    'button_label' => 'Voeg review toe',
+                    'sub_fields' => [
+                        [
+                            'type' => 'text',
+                            'name' => 'title',
+                            'label' => 'Title',
+                            'wrapper' => [
+                                'width' => '25%',
+                            ],
+                        ],
+                        [
+                            'type' => 'text',
+                            'name' => 'type',
+                            'label' => 'Type klant',
+                            'wrapper' => [
+                                'width' => '25%',
+                            ],
+                        ],
+                        [
+                            'type' => 'text',
+                            'name' => 'name',
+                            'label' => 'Klant naam',
+                            'wrapper' => [
+                                'width' => '25%',
+                            ],
+                        ],
+                        [
+                            'type' => 'number',
+                            'name' => 'rating',
+                            'label' => 'Rating',
+                            'default_value' => 5,
+                            'min' => 1,
+                            'max' => 5,
+                            'wrapper' => [
+                                'width' => '25%',
+                            ],
+                        ],
+                        [
+                            'type' => 'wysiwyg',
+                            'name' => 'content',
+                            'label' => 'Content',
+                        ],
+                    ],
                 ],
                 self::colorPicker('achtergrond', 'Achtergrond kleur'),
             ],

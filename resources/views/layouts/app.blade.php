@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @php(do_action('get_header'))
+    @livewireStyles
     @php(wp_head())
     @include('utils.styles')
 </head>
@@ -29,6 +30,7 @@
     @php(do_action('get_footer'))
     @php(wp_footer())
     @include('utils.scripts')
+    @livewireScripts
 </body>
 
 </html>
