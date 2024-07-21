@@ -1,0 +1,1 @@
+/Users/bas/Projects/stammes/public/content/plugins/query-monitor/wp-content/db.php

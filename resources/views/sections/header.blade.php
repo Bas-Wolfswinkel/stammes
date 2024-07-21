@@ -1,5 +1,5 @@
-<header class="absolute left-0 top-0 z-50 w-full">
-    <x-container class="pt-8 md:pt-10">
+<header class="fixed left-0 top-0 z-50 w-full">
+    <x-container class="py-4 md:py-4">
         <div class="flex items-start justify-between lg:items-center">
             @if ($logo = get_field('logo', 'option'))
                 <a class="block" href="{{ home_url('/') }}">
@@ -51,3 +51,13 @@
         </div>
     </x-container>
 </header>
+
+<script>
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 10) {
+            document.querySelector('header').classList.add('bg-green');
+        } else {
+            document.querySelector('header').classList.remove('bg-green');
+        }
+    });
+</script>
