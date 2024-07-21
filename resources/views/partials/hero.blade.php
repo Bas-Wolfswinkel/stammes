@@ -2,7 +2,7 @@
 	<div class="absolute left-0 top-0 h-[317px] w-full" style="background: linear-gradient(180deg, #13565E 0%, rgba(19, 86, 94, 0.00) 89.78%); background-blend-mode: multiply;">
 	</div>
 	<x-container>
-		<h1 class="font-lato text-[38px] font-light uppercase leading-[40px] tracking-[1.2px] text-white md:text-[79.23px] md:leading-[77.4px]" style="@if ($max_width_desktop = get_sub_field('max_width_desktop')) --max-width-desktop:{{ $max_width_desktop }}px; @endif @if ($max_width_mobile = get_sub_field('max_width_mobile')) --max-width-mobile:{{ $max_width_mobile }}px; @endif">
+		<h1 class="font-lato text-[30px] font-light uppercase leading-[40px] tracking-[1.2px] text-white md:text-[79.23px] md:leading-[77.4px]" style="@if ($max_width_desktop = get_sub_field('max_width_desktop')) --max-width-desktop:{{ $max_width_desktop }}px; @endif @if ($max_width_mobile = get_sub_field('max_width_mobile')) --max-width-mobile:{{ $max_width_mobile }}px; @endif">
 			{!! App\Helper::title(get_sub_field('hero_title')) !!}
 		</h1>
 

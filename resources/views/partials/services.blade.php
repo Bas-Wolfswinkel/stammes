@@ -27,7 +27,7 @@
 									<h2 class="text-70-80-300 text-green pb-8 uppercase">{!! $main_title !!}</h2>
 								@endif
 								@if ($title)
-									<h3 class="text-45-45-700 text-green hyphens-auto break-words uppercase" lang="nl">{!! $title !!}</h3>
+									<h3 class="max-sm:text-[44px] text-45-45-700 text-green hyphens-auto break-words uppercase" lang="nl">{!! $title !!}</h3>
 								@endif
 								@if ($content = $service['content'])
 									<x-wissiewig>{!! $content !!}</x-wissiewig>

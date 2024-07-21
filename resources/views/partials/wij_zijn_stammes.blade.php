@@ -2,7 +2,7 @@
     <div class="grid grid-cols-1 gap-y-[65px] lg:grid-cols-12 lg:grid-rows-1">
         <div class="z-20 space-y-6 lg:col-span-6 lg:col-start-1 lg:row-span-full">
             @if ($title = get_sub_field('title'))
-                <h2 class="text-title-medium">
+                <h2 class="max-sm:text-[30px] text-title-medium">
                     {!! App\Helper::title($title) !!}</h2>
             @endif
             @if ($content = get_sub_field('content'))
