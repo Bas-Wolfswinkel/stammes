@@ -24,10 +24,10 @@
 						<article class="grid items-center gap-10 pb-[40px] lg:grid-cols-2 lg:pb-[80px]" id="{!! str_replace('&shy;', '', $title) !!}">
 							<div class="@if ($loop->even) lg:order-2 @endif space-y-6 lg:space-y-8">
 								@if ($loop->first && $main_title)
-									<h2 class="text-70-80-300 text-green pb-8 uppercase">{!! $main_title !!}</h2>
+									<h2 class="text-40-40-300 lg:text-70-80-300 text-green pb-8 uppercase">{!! $main_title !!}</h2>
 								@endif
 								@if ($title)
-									<h3 class="max-sm:text-[44px] text-45-45-700 text-green hyphens-auto break-words uppercase" lang="nl">{!! $title !!}</h3>
+									<h3 class="text-40-40-300 lg:text-45-45-700 text-green hyphens-auto break-words uppercase" lang="nl">{!! $title !!}</h3>
 								@endif
 								@if ($content = $service['content'])
 									<x-wissiewig>{!! $content !!}</x-wissiewig>
