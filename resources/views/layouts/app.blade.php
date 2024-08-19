@@ -20,7 +20,7 @@
 
         @include('sections.header')
 
-        <main id="main max-w-sceen overflow-x-hidden">
+        <main id="main" class="max-w-sceen overflow-x-hidden">
             @yield('content')
         </main>
 
