@@ -64,7 +64,7 @@
 
     @if ($hasMore)
         <div class="flex justify-center">
-            <x-button class="mx-auto mt-[42px] block w-fit lg:mt-[80px]" wire:click="loadMore">Load more</x-button>
+            <x-button class="mx-auto mt-[42px] block w-fit lg:mt-[80px]" wire:click="loadMore">Laad meer</x-button>
         </div>
     @endif
 </div>
