@@ -13,7 +13,7 @@ class ProjectLazyLoader extends Component
 
     public bool $manual;
 
-    public int $perPage = 2;
+    public int $perPage = 6;
 
     public int $page = 1;
 
